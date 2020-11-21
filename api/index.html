@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+    
+  /*
+   * Footer
+   */
+   .blog-footer {
+    padding: 2.5rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #e5e5e5;
+  }
+  .blog-footer p:last-child {
+    margin-bottom: 0;
+  }
+  </style>
+</head>
+
+<body>
+    <section class="search-banner bg-danger text-white py-5 mb-3" id="search-banner" style="background-image: url('assets/computer-3343887_1920.jpg');background-size: cover;;">
+        <div class="container py-5 my-5">
+          <div class="row text-center pb-4">
+            <div class="col-md-12">
+              <h2>Find the Doctor near you</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <div class="form-group ">
+                        <select id="inputState" class="form-control">
+                          <option selected>... Select New/Used...</option>
+                          <option>Chennai</option>
+                          <option>Banglore</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-5">
+                      <div class="form-group ">
+                        <select id="inputState" class="form-control">
+                          <option selected>... Select New/Used...</option>
+                          <option>New</option>
+                          <option>Used</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-2 pl-0">
+                      <div class="form-group ">
+                        <button class="btn btn-primary">Search</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card mb-3">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="http://placehold.it/500x550" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title" [routerLink]="['doctor',doctor._id]">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                      content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="blog-footer">
+        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        <p>
+          <a href="#">Back to top</a>
+        </p>
+      </footer>
+</body>
+</html>

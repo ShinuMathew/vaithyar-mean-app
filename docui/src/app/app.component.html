@@ -1,0 +1,81 @@
+<section class="search-banner bg-danger text-white py-5 mb-3" id="search-banner" style="background-image: url('assets/computer-3343887_1920.jpg');background-size: cover;;">
+  <div class="container py-5 my-5">
+    <div class="row text-center pb-4">
+      <div class="col-md-12">
+        <h2>{{title}}</h2>
+        <!-- [(ngModel)]: 2 way data binding. the input value typed by the user is being sent to "app.component.ts" and is being fetched in the <h2> using {{inputVal}} -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-group ">
+                  <select id="inputState" class="form-control" [(ngModel)]="inputVal">
+                    <option selected>... Select State... </option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Banglore">Banglore</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group ">
+                  <select id="inputState" class="form-control" >
+                    <option selected>... Select New/Used...</option>
+                    <option value="New">New</option>
+                    <option value="Used">Used</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-2 pl-0">
+                <div class="form-group ">
+                  <button class="btn btn-primary" [disabled]="isbuttondisabled" (click)="searchdoc()">Search</button>
+                  <!-- [disabled]: PROPERTY DATABINDING EXAMPLE. "isbuttondisabled" value is available in "app.component.ts"-->
+                  <!-- (click): EVENT DATABINDING EXAMPLE. "searchDoc()" is called from "app.component.ts"-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div *ngIf="doctorsList.length == 0">
+        <h1>No Doctors available in this location</h1>
+      </div>
+      <div class="card mb-3" *ngFor="let doctor of doctorsList">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src={{doctor.url}} class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h3 class="card-title">{{doctor.docname}}</h3>
+              <p class="card-text">
+                <b>Speciality: </b> {{doctor.speciality}}, 
+                <b>Age: </b> {{doctor.age}}</p>
+                <b>Education: </b><p class="card-text" *ngFor="let docdeg of doctor.education">
+                  {{docdeg}}
+                </p>
+              <p class="card-text">{{doctor.address.permanent.flatno}}, {{doctor.address.permanent.street}},<br> {{doctor.address.permanent.city}}, {{doctor.address.permanent.state}}-{{doctor.address.permanent.pincode}}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="blog-footer">
+  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</footer>
